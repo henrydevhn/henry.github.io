@@ -1,0 +1,316 @@
+h1 {
+    background: linear-gradient(to right, #000000, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 4rem;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+    animation: brillo-pulsante 2s infinite alternate;
+}
+
+@keyframes brillo-pulsante {
+    from { filter: drop-shadow(0 0 2px #d4af37); }
+    to { filter: drop-shadow(0 0 15px #d4af37); }
+}
+
+
+/* Estilo para el enlace usando la clase */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ffff; /* Color Cian/Aqua que te gusta */
+    box-shadow: 0 0 10px #00ffff;
+    transition: 0.3s;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.a {
+    /* Mantenemos tu estilo de cápsula */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.a:hover {
+    box-shadow: 0 0 20px #00ffff, 
+                0 0 40px rgba(0, 255, 255, 0.6);
+    transform: scale(1.1) rotate(2deg);
+    background: #00ffff;
+    color: #000; /* El texto se vuelve oscuro para resaltar */
+}
+
+body {
+    /* Mantenemos el fondo de espacio profundo */
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Configuración para alinear arriba al centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centra horizontalmente */
+    justify-content: flex-start; /* Alinea al inicio (arriba) */
+    padding-top: 50px;        /* Espacio para que no pegue al borde superior */
+}
+
+/* Decoración adicional para que el fondo se sienta más tecnológico */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px; /* Crea un patrón de puntos sutil */
+    pointer-events: none;
+}
+
+h1 {
+    /* Tu estilo actual de h1 */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(157, 212, 55, 0.3); /* Línea dorada suave abajo */
+    padding-bottom: 10px;
+    text-align: center;
+    
+}
+
+
+
+.seccion-btp {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #d4af37; /* Detalle dorado lateral */
+    backdrop-filter: blur(5px);
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+
+h2 {
+    color: #00ffff; /* Cian para los subtítulos */
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+p {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.contenedor-asignaturas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.asignatura-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.asignatura-card span {
+    margin-right: 15px;
+    color: #00ffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el mouse */
+.asignatura-card:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #d4af37; /* Cambio a dorado al hacer hover */
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Brillo metálico que recorre la tarjeta */
+.asignatura-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.asignatura-card:hover::after {
+    left: 120%;
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1100px;
+}
+
+.asignatura-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.asignatura-card:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: #d4af37; /* Dorado al pasar el mouse */
+}
+
+/* Ventana de fondo oscuro */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion-genero {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.titulo-genero {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid;
+}
+
+.titulo-genero.hombres {
+    color: #00ffff; /* Cian */
+    border-color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.titulo-genero.mujeres {
+    color: #ff00d4; /* Dorado para combinar con el h1 */
+    border-color: #ff00d4;
+    text-shadow: 0 0 10px rgba(255, 2, 242, 0.493);
+}
+
+/* Reutilizamos tu clase de tarjetas para que se vea igual que las materias */
+.asignatura-card span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Configuración de página */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Fondo oscuro profundo */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
+
+/* Contenedor que empuja todo hacia ARRIBA y al CENTRO */
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 60px; /* Ajusta este valor si quieres más o menos espacio arriba */
+}
+
+/* Título con borde dorado y resplandor (Efecto de tu imagen) */
+.main-title {
+    font-size: 3.8rem;
+    margin: 0 0 15px 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #e2c070;
+    filter: drop-shadow(0 0 15px rgba(226, 192, 112, 0.6));
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 800;
+}
+
+/* Menú de navegación */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+footer {
+    text-align: center;
+    color:gray;
+    font-size: 25px;
+}
